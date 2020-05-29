@@ -1,0 +1,88 @@
+# syntax for TOML
+[[plugins]]
+repo = "cespare/vim-toml"
+
+# syntax for Vue/Nuxt
+[[plugins]]
+repo = "posva/vim-vue"
+
+# syntax for Stylus
+[[plugins]]
+repo = "wavded/vim-stylus"
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo ="kristijanhusak/defx-git"
+hook_add = """
+source ~/.config/nvim/plugins/defx-git.rc.vim
+"""
+
+[[plugins]]
+repo = "Shougo/denite.nvim"
+hook_add = """
+source ~/.config/nvim/plugins/denite.rc.vim
+"""
+
+[[plugins]]
+repo = "shougo/deol.nvim"
+hook_add = """
+source ~/.config/nvim/plugins/deol.rc.vim
+"""
+
+[[plugins]]
+repo = "Shougo/defx.nvim"
+depends = ["defx"]
+hook_add = """
+source ~/.config/nvim/plugins/defx.rc.vim
+"""
+
+[[plugins]]
+repo = "Shougo/deoplete.nvim"
+depends = ["deplete"] 
+hook_add = """
+source ~/.config/nvim/plugins/deplete.rc.vim
+"""
+
+[[plugins]]
+repo = "neoclide/coc.nvim"
+merged = 0
+rev = "release"
+hook_add = """
+source ~/.config/nvim/plugins/coc.rc.vim
+"""
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = """
+source ~/.config/nvim/plugins/airline.rc.vim
+"""
+
+[[plugins]]
+repo = "w0rp/ale"
+hook_add = """
+source ~/.config/nvim/plugins/ale.rc.vim
+"""
+
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+hook_add = """
+source ~/.config/nvim/plugins/airline.rc.vim
+"""
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+#theme
+[[plugins]]
+repo = 'tomasr/molokai'
