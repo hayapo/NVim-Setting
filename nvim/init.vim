@@ -477,6 +477,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "===============================================================================================================
 
+"===========================================================================================================
 if dein#load_state('/home/hayato/.cache/dein')
   call dein#begin('/home/hayato/.cache/dein')
 
@@ -521,13 +522,16 @@ let g:rehash256 = 1
 " finally
 syntax on
 " }}}
+"==========================================================================================================
 
+"Preferences================================================================================================
 let g:airline_theme = 'molokai'
 set guifont=RobotoMono\ Nerd\ Font\ 11
-
 let g:airline_powerline_fonts = 1
 set laststatus=2
+"==========================================================================================================
 
+"AirlineSelectNextTab======================================================================================
 nmap <C-p> <Plug>AirlineSelectPrevTab
 nmap <C-n> <Plug>AirlineSelectNextTab
 let g:airline#extensions#tabline#buffer_idx_format = {
@@ -546,7 +550,9 @@ let g:airline#extensions#tabline#buffer_idx_format = {
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
- 
+"===========================================================================================================
+
+"Seperater==================================================================================================
 "左側に使用されるセパレータ
 let g:airline_left_sep = '⮀'
 let g:airline_left_alt_sep = '⮁'
@@ -566,7 +572,9 @@ let g:airline#extensions#default#layout = [
 	\ [ 'a', 'b', 'c' ],
 	\ [ 'x', 'y', 'z', 'error', 'warning']
 	\ ]
+"===========================================================================================================
 
+"General====================================================================================================
 " インクリメンタルサーチ. １文字入力毎に検索を行う
 set incsearch
 " 検索パターンに大文字小文字を区別しない
@@ -575,12 +583,10 @@ set ignorecase
 set smartcase
 " 検索結果をハイライト"
 set hlsearch
-
 " カーソルラインをハイライト"
 set cursorline
-
 "NERDTreeをトグルで表示、非表示
 map <C-l> :NERDTreeToggle<CR>
-
 "マウス有効化
 set mouse=a 
+"==========================================================================================================
