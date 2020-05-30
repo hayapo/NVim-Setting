@@ -45,7 +45,7 @@ repo = 'vim-airline/vim-airline'
 repo = "w0rp/ale"
 
 [[plugins]]
-repo    = 'vim-airline/vim-airline'
+repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
@@ -55,6 +55,12 @@ repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[[plugins]]]
+repo = 'thinca/vim-quickrun'
 
 #theme
 [[plugins]]
