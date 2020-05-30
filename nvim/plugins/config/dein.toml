@@ -1,0 +1,61 @@
+# syntax for TOML
+[[plugins]]
+repo = "cespare/vim-toml"
+
+# syntax for Vue/Nuxt
+[[plugins]]
+repo = "posva/vim-vue"
+
+# syntax for Stylus
+[[plugins]]
+repo = "wavded/vim-stylus"
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo ="kristijanhusak/defx-git"
+
+[[plugins]]
+repo = "Shougo/denite.nvim"
+
+[[plugins]]
+repo = "shougo/deol.nvim"
+
+[[plugins]]
+repo = "Shougo/defx.nvim"
+depends = ["defx"]
+
+[[plugins]]
+repo = "Shougo/deoplete.nvim"
+depends = ["deplete"] 
+
+[[plugins]]
+repo = "neoclide/coc.nvim"
+merged = 0
+rev = "release"
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = "w0rp/ale"
+
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+#theme
+[[plugins]]
+repo = 'tomasr/molokai'

@@ -1,4 +1,4 @@
-"...............................................................................................................
+"...........................................................................................................
 "...............................................................................................................
 "................................_..............................................................................
 "                         __   _(_)_ __ ___  _ __ ___ 
@@ -15,12 +15,16 @@
 ""General
 "{{{
 " Indent
-set tabstop=4
-set shiftwidth=4
-set expandtab
 set list
 set listchars=tab:»-
-
+set number             "行番号を表示
+set autoindent         "改行時に自動でインデントする
+set tabstop=4          "タブを何文字の空白に変換するか
+set shiftwidth=4       "自動インデント時に入力する空白の数
+set expandtab          "タブ入力を空白に変換
+set splitright         "画面を縦分割する際に右に開く
+set clipboard=unnamed  "yank した文字列をクリップボードにコピー
+set hls                "検索した文字をハイライトする
 " Fold
 set foldlevel=100
 
@@ -85,38 +89,15 @@ let g:airline_theme = 'molokai'
 
 "===============================================================================================================
 "defx-git.rc.vim
-let s:plugin = '~/.config/nvim/plugins/config/dein.toml'
-let s:plugin_lazy = '~/.config/nvim/plugins/config/dein_lazy.toml'
-let NERDTreeIgnore = ['\.DAT$', '\.LOG1$', '\.LOG1$']
-let NERDTreeIgnore += ['\.png$','\.jpg$','\.gif$','\.mp3$','\.flac$', '\.ogg$', '\.mp4$','\.avi$','.webm$','.mkv$','\.pdf$', '\.zip$', '\.tar.gz$', '\.rar$']
-let NERDTreeIgnore +=['\c^ntuser\..*']
-
-if &compatible
-  set nocompatible
-endif
-
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
-  call dein#load_toml(s:plugin, {'lazy': 0})
-  call dein#load_toml(s:plugin_lazy, {'lazy': 1})
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('fatih/molokai')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('ryanoasis/vim-devicons')
-  call dein#end()
-  call dein#save_state()
-endif
-
-if dein#check_install()
-  call dein#install()
-endif
-
-filetype plugin indent on
-autocmd VimEnter * execute 'NERDTree'
-let g:airline_theme = 'molokai'
+let g:defx_git#indicators = {
+      \ 'Modified'  : '+',
+      \ 'Staged'    : '●',
+      \ 'Untracked' : '?',
+      \ 'Renamed'   : '➜',
+      \ 'Unmerged'  : '═',
+      \ 'Deleted'   : 'x',
+      \ 'Unknown'   : '?'
+      \ }
 "===============================================================================================================
 
 "===============================================================================================================
@@ -441,7 +422,8 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " Remap for rename current word
 nmap <silent><F2> <Plug>(coc-rename)
 " Remap for format selected region
@@ -455,6 +437,8 @@ augroup mygroup
   " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
+
+
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -500,7 +484,7 @@ if dein#load_state('/home/hayato/.cache/dein')
   " Required:
   call dein#add('/home/hayato/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-  " Add or remove your plugins here like this:
+  " Add or rvemove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
 
@@ -543,8 +527,6 @@ set guifont=RobotoMono\ Nerd\ Font\ 11
 
 let g:airline_powerline_fonts = 1
 set laststatus=2
-
-let g:airline_theme = 'tomorrow'
 
 nmap <C-p> <Plug>AirlineSelectPrevTab
 nmap <C-n> <Plug>AirlineSelectNextTab
@@ -597,4 +579,8 @@ set hlsearch
 " カーソルラインをハイライト"
 set cursorline
 
+"NERDTreeをトグルで表示、非表示
 map <C-l> :NERDTreeToggle<CR>
+
+"マウス有効化
+set mouse=a 
